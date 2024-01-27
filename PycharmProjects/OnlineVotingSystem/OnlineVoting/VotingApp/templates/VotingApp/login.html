@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Online Voting System - Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css}">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #ddd;
+    background-image: url('/static/images/image.jpg');
+
+}
+
+#login-box {
+    width: 330px;
+    height: 400px;
+    padding: 20px;
+    margin: 100px auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-image: url(/static/images/image.jpg);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    color: #333;
+}
+
+input[type="text"], input[type="password"] {
+    width: 300px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 320px;
+    padding: 10px;
+    margin: 20px 0;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <form id="form" method="POST">
+        {% csrf_token %}
+    <div id="login-box">
+        <h1>Online Voting System</h1>
+            <label>Email</label>
+            <input type="text" name="email" required><br>
+
+            <label>Password</label>
+            <input type="password" name="password" required><br>
+
+            <button type="submit">LOGIN</button>
+
+      </form>
+        <a href="#">Forgot password?</a>
+     <br>
+        <span style="color: white;">Dont you have an account</span><a href="{% url 'registration' %}" style="color: rgb(245, 90, 224);margin-left:10px;">Register</a>
+    </div>
+    <script src="../js/login.js">
+
+
+    </script>
+</body>
+</html>
